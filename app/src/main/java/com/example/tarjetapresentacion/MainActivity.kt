@@ -75,6 +75,34 @@ fun InitialText(name: String, positionJob: String, modifier: Modifier = Modifier
 }
 
 @Composable
+fun InitialText(phone: String, email: String,street:String, modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier.padding(8.dp),
+    ) {
+        Text(
+            text = phone,
+            fontSize = 36.sp,
+            textAlign = TextAlign.Center,
+        )
+        Text(
+            text = email,
+            fontSize = 36.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier
+                .padding(16.dp)
+                .align(alignment = Alignment.End)
+        )
+        Text(
+            text = street,
+            fontSize = 36.sp,
+
+        )
+    }
+}
+
+@Composable
 fun InitialImage(name: String, positionJob: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.fondo)
     Box {
