@@ -96,9 +96,10 @@ fun InitialText(phone: String, email: String,street:String, modifier: Modifier =
         )
         Text(
             text = street,
-            fontSize = 36.sp,
+            fontSize = 32.sp,
 
-        )
+
+            )
     }
 }
 
