@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -34,7 +35,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    InitialImage(name =  "Jon Raul", positionJob = "Android developer" )
+                    InitialImage(name =  "Jon y Raul", positionJob = "Android developer" )
+                    BottomText(phone = "+32 435852603", email = "FrancoRodriguez@gmail.com", street = "Francos Rodriguez 106")
 
                 }
             }
@@ -61,6 +63,7 @@ fun InitialText(name: String, positionJob: String, modifier: Modifier = Modifier
             fontSize = 50.sp,
             lineHeight = 40.sp,
             textAlign = TextAlign.Center,
+            color = Color.White
         )
         Text(
             text = positionJob,
@@ -68,35 +71,40 @@ fun InitialText(name: String, positionJob: String, modifier: Modifier = Modifier
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.End)
+                .align(alignment = Alignment.End),
+            color = Color.White
 
         )
     }
 }
 
 @Composable
-fun InitialText(phone: String, email: String,street:String, modifier: Modifier = Modifier) {
+fun BottomText(phone: String, email: String,street:String, modifier: Modifier = Modifier) {
     Column(
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.padding(8.dp),
+        modifier = modifier.fillMaxSize().padding(8.dp),
     ) {
         Text(
             text = phone,
-            fontSize = 36.sp,
+            fontSize = 26.sp,
             textAlign = TextAlign.Center,
+            modifier = Modifier.padding(bottom = 4.dp),
+            color = Color.White
         )
         Text(
             text = email,
-            fontSize = 36.sp,
+            fontSize = 26.sp,
             textAlign = TextAlign.Center,
-            modifier = Modifier
-                .padding(16.dp)
-                .align(alignment = Alignment.End)
+            modifier = Modifier.padding(bottom = 4.dp),
+            color = Color.White
         )
         Text(
             text = street,
-            fontSize = 32.sp,
+            fontSize = 26.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(bottom = 4.dp),
+            color = Color.White
 
 
             )
